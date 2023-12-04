@@ -6,13 +6,16 @@
       <title>Setting Up A Grid</title>
    </head>
       <style>
+         body {
+            background-color: #8AA5C1;
+            /*margin: 2em;*/
+         }
          #container {
             max-width: 25em;
             max-height: 7em;
             /*max-width: 30em;*/
             /*margin-top: 2em;*/
-            margin: auto;
-            /*margin: auto, 10em, 7em, auto;*/
+            margin: 2em auto;
             border-style: outset;
             border-width: .5em;
             border-color: greenyellow;
@@ -35,6 +38,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-small;
             color: black;
+            text-align: right;
             
          }
          #two {
@@ -42,6 +46,7 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-small;
             color: black;
+            text-align: left;
          }
          #three {
             background-color: lemonchiffon;
@@ -202,18 +207,21 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-small;
             color: black;
+            text-align: right;
          }
          #twentyseven {
             background-color:lemonchiffon;
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-small;
             color: black;
+            text-align: right;
          }
          #twentyeight {
             background-color:lemonchiffon;
             font-family: Arial, Helvetica, sans-serif;
             font-size: xx-small;
             color: black;
+            text-align: left;
          }
          #twentynine {
             background-color:lemonchiffon;
@@ -222,6 +230,9 @@
             color: black;
          }
          #thirty {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: xx-small;
+            color: black;
             border-style: solid;
             border-color: darkkhaki;
             border-width: .125em;
@@ -1165,6 +1176,35 @@
             font-size: xx-small;
             color: black;
          }*/
+         #caption {
+            text-align: center;
+         }
+         #description {
+            box-sizing: border-box;
+            max-width: 30em;
+            margin: auto;
+            border-style: solid;
+            border-width: .125em;
+            border-color:darkcyan;
+            padding-top: -1em;
+            padding-right: 1em;
+            padding-bottom: .5em;
+            padding-left: 1em;
+         }
+         .button {
+            display: inline;
+            font-size: small;
+            border-style: solid;
+            background-color: aquamarine;
+            
+            
+        }
+        .button:hover { cursor: pointer;
+            background-color: lightgreen;
+        }
+        .button:active {
+            background-color: limegreen;
+        }
       </style>
    <body>
       <div id="container">
@@ -1220,11 +1260,11 @@
             </div>
             <div id="twentyfive">
             </div>
-            <div id="twentysix">Rea
+            <div id="twentysix">Re-
             </div>
-            <div id="twentyseven">dy
+            <div id="twentyseven">Pla
             </div>
-            <div id="twentyeight">to
+            <div id="twentyeight">nt
             </div>
             <div id="twentynine">
             </div>
@@ -1278,9 +1318,9 @@
             </div>
             <div id="fifty">
             </div>
-            <div id="fiftyone">Repl
+            <div id="fiftyone">
             </div>
-            <div id="fiftytwo">ant
+            <div id="fiftytwo">
             </div>
             <div id="fiftythree">
                <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
@@ -1638,8 +1678,32 @@
             </div>--->
         </div>
       </div>
+      <div id="caption">
+         <h4>Stylized rendition of the garden showing the dominant species in their relative position.</h4>
+      </div>
+      <div id="description">
+         <p>The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of penstemon, coneflower, anise hyssop, yarrow, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two &ldquo;naturally&rdquo; seeded areas, seen in the stylized rendition.</p>
+         <p>It followed that natural reseeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation.</p>
+         <p>As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3" of new top soil had accumulated atop the fabric. This material (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed.</p>
+         <p>There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary &ldquo;weed&rdquo; is grass!</p>
+         <p>New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red &ldquo;bearded&rdquo; penstemon. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select<sup>&reg;</sup> varieties. The idea being that Plant Select<sup>&reg;</sup> will survive the Colorado Front Range.</p> 
+         <p>The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?</p> 
+            <div style="text-align:center"><button class="button" id="info">Read Aloud</button></div>
+
+           <br>
+         <div style="text-align:center"><img src="C:\Users\13036\Downloads\IMG_2094 (1).JPEG" height="100" width="100"></div>
+
+      </div>
+       
       <script>
-      <!---JavaScript Statements Here--->
+            document.getElementById("info").addEventListener("click", readText, false);
+               function readText() {
+               var text = ("The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of pen stem in, coneflower, anise hyssop, yar row, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two naturally seeded areas, seen in the stylized rendition. It followed that natural reseeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation. As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3 inches of new top soil had accumulated atop the fabric. This material (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed. There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary weed is grass! New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red bearded pen stem in. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select varieties. The idea being that Plant Select will survive the Colorado Front Range. The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?")
+               var msg = new SpeechSynthesisUtterance(text);
+                window.speechSynthesis.speak(msg);
+               }
       </script>
+      
+      
    </body>
 </html>
