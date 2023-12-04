@@ -26,6 +26,8 @@
             grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;*/
             grid-template-rows: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;
             grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;
+            /*grid-template-rows: repeat (25, 1em);*/
+            /*grid-template-columns: repeat (25, 1em);*/
             /*grid-template-rows: [header-start] 100px [content-start] 200px [footer-start] 100px;*/
             /*grid-template-columns: [ads] 100px [main] 200px [links] 100px;*/
             /*grid-template-columns: [ads] 1fr [main] 2fr [links] 1fr;*/
@@ -1181,6 +1183,7 @@
          }
          #description {
             box-sizing: border-box;
+            /*font-size:x-large;*/
             max-width: 30em;
             margin: auto;
             border-style: solid;
@@ -1204,6 +1207,14 @@
         }
         .button:active {
             background-color: limegreen;
+        }
+        #about {
+         background-color: darkkhaki;
+        }
+        td {
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: small;
+         text-align: center;
         }
       </style>
    <body>
@@ -1684,25 +1695,62 @@
       <div id="description">
          <p>The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of penstemon, coneflower, anise hyssop, yarrow, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two &ldquo;naturally&rdquo; seeded areas, seen in the stylized rendition.</p>
          <p>It followed that natural reseeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation.</p>
-         <p>As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3" of new top soil had accumulated atop the fabric. This material (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed.</p>
+         <p>As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3" of new top soil had accumulated atop the fabric. The soil (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed.</p>
          <p>There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary &ldquo;weed&rdquo; is grass!</p>
          <p>New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red &ldquo;bearded&rdquo; penstemon. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select<sup>&reg;</sup> varieties. The idea being that Plant Select<sup>&reg;</sup> will survive the Colorado Front Range.</p> 
          <p>The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?</p> 
-            <div style="text-align:center"><button class="button" id="info">Read Aloud</button></div>
+            
+         <div style="text-align:center"><button class="button" id="info">Read Aloud</button></div>
 
            <br>
-         <div style="text-align:center"><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_2094%20(1).JPEG?raw=true" height="100" width="100"></div>
-
+         <!---<div style="text-align:center"><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_2094%20(1).JPEG?raw=true" height="200" width="200"></div>--->
+         <div style="text-align:center"><button class="button" id="design">Photo Gallery</button></div>
       </div>
        
       <script>
             document.getElementById("info").addEventListener("click", readText, false);
                function readText() {
-               var text = ("The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of pen stem in, coneflower, anise hyssop, yar row, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two naturally seeded areas, seen in the stylized rendition. It followed that natural reseeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation. As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3 inches of new top soil had accumulated atop the fabric. This material (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed. There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary weed is grass! New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red bearded pen stem in. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select varieties. The idea being that Plant Select will survive the Colorado Front Range. The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?")
+               var text = ("The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of pen stem in, coneflower, anise hyssop, yar row, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two naturally seeded areas, seen in the stylized rendition. It followed that natural ree seeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation. As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3 inches of new top soil had accumulated atop the fabric. The soil (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed. There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary weed is grass! New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red bearded pen stem in. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select varieties. The idea being that Plant Select will survive the Colorado Front Range. The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?")
                var msg = new SpeechSynthesisUtterance(text);
                 window.speechSynthesis.speak(msg);
                }
       </script>
+
+      <br>
+      <br>
+
+<!---<button class="button" id="design">About</button>--->
+
+<dialog id="about">
+   <table>
+      <tbody>
+         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_2094%20(2).JPEG?raw=true" height="100" width="100" alt="CA Garden after July summer rain"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0069.jpg?raw=true" height="100" width="100" alt="Speciosa"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0110.jpg?raw=true" height="100" width="100" alt="Salvia"></td></tr>
+         <tr><td>Summer Rain</td><td>Speciosa</td><td>Salvia</td></tr>
+         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0106.jpg?raw=true" height="100" width="100" alt="Agastache Coronado"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0108.jpg?raw=true" height="100" width="100" alt="Asclepias tuberosa"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0107.jpg?raw=true" height="100" width="100" alt="Russian Sage"></td></tr>
+         <tr><td>Coronado</td><td>Tuberosa</td><td>Russian Sage</td></tr>
+         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0102.jpg?raw=true" height="100" width="100" alt="Butterfly Bush"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0112.jpg?raw=true" height="100" width="100" alt="Anise Hyssop"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0179.jpg?raw=true" height="100" width="100" alt="Rabbit Brush"></td></tr>
+         <tr><td>Butterfly Bush</td><td>Anise Hyssop</td><td>Rabbit Brush</td></tr>
+         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0097.jpg?raw=true" height="100" width="100" alt="Galardia"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0111.jpg?raw=true" height="100" width="100" alt="Hollyhock"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0078.jpg?raw=true" height="100" width="100" alt="Penstemon"></td></tr>
+         <tr><td>Galardia</td><td>Hollyhock</td><td>Penstemon</td></tr>
+      </tbody>
+   </table><span style="font-s
+  <div id="open">
+     <div style="text-align:center"><button class="button" type="reset" id="cancelabout">Close</button></div>
+  </div>
+</dialog>
+
+<script>
+   document.getElementById("design").addEventListener("click",discreption9,false);
+           function discreption9() {
+                dialog = document.getElementById("about");
+                dialog.show();   
+           };
+           document.getElementById("cancelabout").addEventListener("click",discreption10,false);
+           function discreption10() {
+                dialog = document.getElementById("about");
+                dialog.close();   
+           };
+</script>
       
       
    </body>
