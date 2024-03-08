@@ -1,1757 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Setting Up A Grid</title>
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Time Lapse jpg Files</title>
    </head>
       <style>
-         body {
-            background-color: #8AA5C1;
-            /*margin: 2em;*/
-         }
-         #container {
-            max-width: 25em;
-            max-height: 7em;
-            /*max-width: 30em;*/
-            /*margin-top: 2em;*/
+        body {
+            
+            background-color: lemonchiffon;
+            max-width: 40em;
             margin: 2em auto;
-            border-style: outset;
-            border-width: .5em;
-            border-color: greenyellow;
-        }
-        #layout {
-            display: grid;
-            /*2em to 1em test => grid-template-rows: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;
-            grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;*/
-            grid-template-rows: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;
-            grid-template-columns: 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em 1em;
-            /*grid-template-rows: repeat (25, 1em);*/
-            /*grid-template-columns: repeat (25, 1em);*/
-            /*grid-template-rows: [header-start] 100px [content-start] 200px [footer-start] 100px;*/
-            /*grid-template-columns: [ads] 100px [main] 200px [links] 100px;*/
-            /*grid-template-columns: [ads] 1fr [main] 2fr [links] 1fr;*/
-            /*8grid-template-areas: "header header header"*/
-            /*"ads main links"*/
-            /*"footer footer footer";*/
-        }
-         #one {
-            background-color: lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            text-align: right;
-            
-         }
-         #two {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            text-align: left;
-         }
-         #three {
-            background-color: lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #four {
-            background-color: lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #five {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #six {
-            background-color: brown;
-            /*letter-spacing: .03375em;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: right;
-            color: black;
-            /*border-style: dashed;
-            border-width: .125em;
-            border-right-width: 0em;
-            border-color: black;*/
-         }
-         #seven {
-            background-color: brown;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: left;
-            color: black;
-            /*border-style: dashed;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-color: black;*/
-         }
-         #eight {
-            background-color: lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #nine {
-            background-color: brown;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: right;
-            color: black;
-         }
-         #ten {
-            background-color: brown;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: left;
-            color: black;
-           
-         }
-         #eleven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #twelve {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #thirteen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fourteen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiveteen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixteen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventeen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eighteen {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #nineteen {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twenty {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twentyone {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #twentytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twentythree {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twentyfour {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twentyfive {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #twentysix {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            text-align: right;
-         }
-         #twentyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            text-align: right;
-         }
-         #twentyeight {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            text-align: left;
-         }
-         #twentynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #thirty {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtyone {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtytwo {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtythree {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtyfour {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtyfive {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtysix {
-            background-color: lemonchiffon;
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-            border-right-width: 0em;
-            border-bottom-width: 0em;
-         }
-         #thirtyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #thirtyeight {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: right;
-            color: black;
-         }
-         #thirtynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #forty {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: left;
-            color: black;
-         }
-         #fortyone {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #fortytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortyfive {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortysix {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: right;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortyeight {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            font-size: xx-small;
-            color: black;
-         }
-         #fortynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            font-size: xx-small;
-            color: black;
-         }
-         #fifty {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftyone {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftyfour {
-            background-color:cornflowerblue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftyfive {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #fiftysix {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftyseven {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #fiftynine {
-            /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixty {
-         }
-         #sixtyone {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #sixtytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixtythree {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixtyfour {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: right;
-            color: black;
-         }
-         #sixtyfive {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            text-align: left;
-            color: black;
-         }
-         #sixtysix {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixtyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixtyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #sixtynine {
-            /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventy {
-            /*background-color:slateblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventyone {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #seventytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventythree {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: right;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventyfour {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventyfive {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventysix {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventyeight {
-           /* background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #seventynine {
-            /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eighty {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-
-         }
-         #eightyone {
-         
-         }
-         #eightytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightyfive {
-            /*background-color: tan;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightysix {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #eightyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightyeight {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #eightynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninety {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetyone {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #ninetytwo {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetythree {
-            /*background-color: blue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetyfive {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetysix {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetyseven {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetyeight {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #ninetynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundred {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfive {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #onehundredsix {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseven {
-            /*background-color: lemonchiffon;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredeight {
-            /*background-color: lemonchiffon;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            border-style: dashed;
-            border-width: .125em;
-            border-top-width: 0em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-color: black;
-         }
-         #onehundrednine {
-            /*background-color: lemonchiffon;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            border-style: dashed;
-            border-width: .125em;
-            border-top-width: 0em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-color: black;
-         }
-         #onehundredten {
-            /*background-color: lemonchiffon;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            border-style: dashed;
-            border-width: .125em;
-            border-top-width: 0em;
-            border-left-width: 0em;
-            border-right-width: 0em;
-            border-color: black;
-         }
-         #onehundredeleven {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #onehundredtwelve {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirteen {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfourteen {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfiveteen {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixteen {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventeen {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredeighteen {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundrednineteen {
-            /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwenty {
-            /*background-color:slateblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentyone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #onehundredtwentytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentyfour {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentyfive {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentysix {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentyseven {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredtwentynine {
-            /*background-color: lemonchiffon;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirty {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #onehundredthirtyone {
-            
-         }
-         #onehundredthirtytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtyfive {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtysix {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-top-width: 0em;
-         }
-         #onehundredthirtyseven {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredthirtynine {
-            /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredforty {
-            /*background-color:slateblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortyone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #onehundredfortytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortyfive {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortysix {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortyseven {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfortynine {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfifty {
-            background-color:lemonchiffon;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfiftyone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black; 
-         }
-         #onehundredfiftytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfiftythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfiftyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredfiftyfive {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredfiftysix {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredfiftyseven {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredfiftyeight {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredfiftynine {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredsixty {
-            border-style: solid;
-            border-color: darkkhaki;
-            border-width: .125em;
-            border-left-width: 0em;
-         }
-         #onehundredsixtyone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #onehundredsixtytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtyfive {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtysix {
-            /*background-color:brown;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtyseven {
-            /*background-color:lightseagreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtyeight {
-            /*background-color:dimgrey;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredsixtynine {
-           /*background-color:limegreen;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventy {
-            /*background-color:slateblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventyone {
-            /*background-color: red;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-            
-         }
-         #onehundredseventytwo {
-            /*background-color: orange;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventythree {
-            /*background-color: green;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventyfour {
-            /*background-color:cornflowerblue;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventyfive {
-            /*background-color: blueviolet;*/
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         /*#onehundredseventysix {
-            background-color:brown;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventyseven {
-            background-color:lightseagreen;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventyeight {
-            background-color:dimgrey;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredseventynine {
-            background-color:limegreen;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }
-         #onehundredeighty {
-            background-color:slateblue;
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: xx-small;
-            color: black;
-         }*/
-         #caption {
-            text-align: center;
-         }
-         #description {
             box-sizing: border-box;
-            /*font-size:x-large;*/
-            max-width: 30em;
-            margin: auto;
-            border-style: solid;
-            border-width: .125em;
-            border-color:darkcyan;
-            padding-top: -1em;
-            padding-right: 1em;
-            padding-bottom: .5em;
-            padding-left: 1em;
-         }
-         .button {
-            display: inline;
-            font-size: small;
-            border-style: solid;
-            background-color: aquamarine;
-            
-            
-        }
-        .button:hover { cursor: pointer;
-            background-color: lightgreen;
-        }
-        .button:active {
-            background-color: limegreen;
-        }
-        #about {
-         background-color: darkkhaki;
-        }
-        td {
-         font-family: Arial, Helvetica, sans-serif;
-         font-size: small;
-         text-align: center;
         }
       </style>
    <body>
-      <div id="container">
-        <div id="layout">
-            <div id="one">
-            </div>
-            <div id="two">
-            </div>
-            <div id="three">
-            </div>
-            <div id="four">
-            </div>
-            <div id="five">
-            </div>
-            <div id="six">Hor
-            </div>
-            <div id="seven">izon
-            </div>
-            <div id="eight">
-            </div>
-            <div id="nine">Gar
-            </div>
-            <div id="ten">den
-            </div>
-            <div id="eleven">
-            </div>
-            <div id="twelve">
-            </div>
-            <div id="thirteen">
-            </div>
-            <div id="fourteen">
-            </div>
-            <div id="fiveteen">
-            </div>
-            <div id="sixteen">
-            </div>
-            <div id="seventeen">
-            </div>
-            <div id="eighteen">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="nineteen">
-            </div>
-            <div id="twenty">
-            </div>
-            <div id="twentyone">
-            </div>
-            <div id="twentytwo">
-            </div>
-            <div id="twentythree">
-            </div>
-            <div id="twentyfour">
-            </div>
-            <div id="twentyfive">
-            </div>
-            <div id="twentysix">Re-
-            </div>
-            <div id="twentyseven">Pla
-            </div>
-            <div id="twentyeight">nt
-            </div>
-            <div id="twentynine">
-            </div>
-            <div id="thirty">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="thirtyone">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="thirtytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="thirtythree">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="thirtyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="thirtyfive">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="thirtysix">
-            </div>
-            <div id="thirtyseven">
-            </div>
-            <div id="thirtyeight">Nat
-            </div>
-            <div id="thirtynine">ural
-            </div>
-            <div id="forty">ly
-            </div>
-            <div id="fortyone">
-            </div>
-            <div id="fortytwo">
-            </div>
-            <div id="fortythree">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/coreopsisearlysunrise.jpg" height="16" width="16" alt="Coreopsis">
-            </div>
-            <div id="fortyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="fortyfive">
-            </div>
-            <div id="fortysix">
-            </div>
-            <div id="fortyseven">Nat
-            </div>
-            <div id="fortyeight">ural
-            </div>
-            <div id="fortynine">ly
-            </div>
-            <div id="fifty">
-            </div>
-            <div id="fiftyone">
-            </div>
-            <div id="fiftytwo">
-            </div>
-            <div id="fiftythree">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="fiftyfour">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="fiftyfive">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="fiftysix">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="fiftyseven">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/catmint1.jpg" height="16" width="16" alt="Cat mint">
-            </div>
-            <div id="fiftyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="fiftynine">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="sixty">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="sixtyone">
-               <img src="https://planttalk.colostate.edu/images/1741f2a.jpg" height="16" width="16" alt="Rabbit Brush">
-            </div>
-            <div id="sixtytwo">
-            </div>
-            <div id="sixtythree">
-            </div>
-            <div id="sixtyfour">See
-            </div>
-            <div id="sixtyfive">ded
-            </div>
-            <div id="sixtysix">
-            </div>
-            <div id="sixtyseven">
-            </div>
-            <div id="sixtyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="20" width="20" alt="Agastache">
-            </div>
-            <div id="sixtynine">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="seventy">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/coreopsisearlysunrise.jpg" height="16" width="16" alt="Coreopsis">
-            </div>
-            <div id="seventyone">
-            </div>
-            <div id="seventytwo">
-            </div>
-            <div id="seventythree">See
-            </div>
-            <div id="seventyfour">ded
-            </div>
-            <div id="seventyfive">
-            </div>
-            <div id="seventysix">
-            </div>
-            <div id="seventyseven">
-            </div>
-            <div id="seventyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="seventynine">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="eighty">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="eightyone">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="eightytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/catmint1.jpg" height="16" width="16" alt="Cat mint">
-            </div>
-            <div id="eightythree">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="eightyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="eightyfive">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="eightysix">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="eightyseven">
-            </div>
-            <div id="eightyeight">
-            </div>
-            <div id="eightynine">
-            </div>
-            <div id="ninety">
-            </div>
-            <div id="ninetyone">
-            </div>
-            <div id="ninetytwo">
-            </div>
-            <div id="ninetythree">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <!---<div id="ninetythree">
-               <img src="C:\Users\13036\OneDrive\Desktop\Chapter 16\water_drop.jpg" style="background-color:blue;" height="16" width="16" alt="Water drop">
-            </div>--->
-            <div id="ninetyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="ninetyfive">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflyweed3.jpg" height="16" width="16" alt="Asclepias tuberosa">
-            </div>
-            <div id="ninetysix">
-            </div>
-            <div id="ninetyseven">
-            </div>
-            <div id="ninetyeight">
-            </div>
-            <div id="ninetynine">
-            </div>
-            <div id="onehundred">
-            </div>
-            <div id="onehundredone">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredtwo">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredthree">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredfour">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="onehundredfive">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="onehundredsix">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredseven">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <div id="onehundredeight">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundrednine">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredten">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredeleven">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredtwelve">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredthirteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredfourteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredfiveteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredsixteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredseventeen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredeighteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflybushmix5.jpg" height="16" width="16" alt="Butterfly Bush">
-            </div>
-            <div id="onehundrednineteen">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflybushmix5.jpg" height="16" width="16" alt="Butterfly Bush">
-            </div>
-            <div id="onehundredtwenty">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflybushmix5.jpg" height="16" width="16" alt="Butterfly Bush">
-            </div>
-            <div id="onehundredtwentyone">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="20" width="20" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredtwentytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="20" width="20" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredtwentythree">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/coreopsisearlysunrise.jpg" height="16" width="16" alt="Coreopsis">
-            </div>
-            <div id="onehundredtwentyfour">
-            </div>
-            <div id="onehundredtwentyfive">
-            </div>
-            <div id="onehundredtwentysix">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredtwentyseven">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredtwentyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredtwentynine">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="onehundredthirty">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/powwow4.jpg" height="16" width="16" alt="Purple Coneflower">
-            </div>
-            <div id="onehundredthirtyone">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredthirtytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflybushmix5.jpg" height="16" width="16" alt="Butterfly Bush">
-            </div>
-            <div id="onehundredthirtythree">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredthirtyfour">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredthirtyfive">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredthirtysix">
-               <img src="https://outsidepride.scdn3.secure.raxcdn.com/assets/image/products/thumbs/17736.jpg" height="16" width="16" alt="Yarrow">
-            </div>
-            <div id="onehundredthirtyseven">
-              <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="16" width="16" alt="Agastache">
-            </div>
-            <div id="onehundredthirtyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="16" width="16" alt="Agastache">
-            </div>
-            <div id="onehundredthirtynine">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="16" width="16" alt="Agastache">
-            </div>
-            <div id="onehundredforty">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredfortyone">
-               <img src="https://www.bhg.com/thmb/P5aey2dEMAuhhzB7EgTIPo-qRo4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Perovskia-atriplicifolia-Rocketman-Walters-Gardens-2486e61b2f824ddea898ec4f96913c34.jpg" height="16" width="16" alt="Russian Sage">
-            </div>
-            <div id="onehundredfortytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredfortythree">
-               <img src="https://www.bhg.com/thmb/P5aey2dEMAuhhzB7EgTIPo-qRo4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Perovskia-atriplicifolia-Rocketman-Walters-Gardens-2486e61b2f824ddea898ec4f96913c34.jpg" height="16" width="16" alt="Russian Sage">
-            </div>
-            <div id="onehundredfortyfour">
-               <img src="https://www.bhg.com/thmb/P5aey2dEMAuhhzB7EgTIPo-qRo4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Perovskia-atriplicifolia-Rocketman-Walters-Gardens-2486e61b2f824ddea898ec4f96913c34.jpg" height="16" width="16" alt="Russian Sage">
-            </div>
-            <div id="onehundredfortyfive">
-               <img src="https://www.bhg.com/thmb/P5aey2dEMAuhhzB7EgTIPo-qRo4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Perovskia-atriplicifolia-Rocketman-Walters-Gardens-2486e61b2f824ddea898ec4f96913c34.jpg" height="16" width="16" alt="Russian Sage">
-            </div>
-            <div id="onehundredfortysix">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredfortyseven">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredfortyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/coreopsisearlysunrise.jpg" height="16" width="16" alt="Coreopsis">
-            </div>
-            <div id="onehundredfortynine">
-            </div>
-            <div id="onehundredfifty">
-            </div>
-            <div id="onehundredfiftyone">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredfiftytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredfiftythree">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredfiftyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredfiftyfive">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" height="15" width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredfiftysix">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" height="15" width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredfiftyseven">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="15" width="16" alt="Agastache">
-            </div>
-            <div id="onehundredfiftyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastacheapricot.jpg" height="15" width="16" alt="Agastache">
-            </div>
-            <div id="onehundredfiftynine">
-               <img src="https://www.outsidepride.com/images/products/detail/herbseed/sage2.jpg" height="15" width="16" alt="Salvia">
-            </div>
-            <div id="onehundredsixty">
-               <img src="https://www.outsidepride.com/images/products/detail/herbseed/sage2.jpg" height="15" width="16" alt="Salvia">
-            </div>
-            <div id="onehundredsixtyone">
-               <img src="https://www.outsidepride.com/images/products/detail/herbseed/sage2.jpg" height="16" width="16" alt="Salvia">
-            </div>
-            <div id="onehundredsixtytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflybushmix5.jpg" height="16" width="16" alt="Butterfly Bush">
-            </div>
-            <div id="onehundredsixtythree">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflyweed3.jpg" height="16" width="16" alt="Asclepias tuberosa">
-            </div>
-            <div id="onehundredsixtyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/butterflyweed3.jpg" height="16" width="16" alt="Asclepias tuberosa">
-            </div>
-            <div id="onehundredsixtyfive">
-               <img src="https://www.bhg.com/thmb/P5aey2dEMAuhhzB7EgTIPo-qRo4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/Perovskia-atriplicifolia-Rocketman-Walters-Gardens-2486e61b2f824ddea898ec4f96913c34.jpg" height="16" width="16" alt="Russian Sage">
-            </div>
-            <div id="onehundredsixtysix">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredsixtyseven">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/showymilkweed3.jpg" Height="16" Width="16" alt="Asclepias speciosa">
-            </div>
-            <div id="onehundredsixtyeight">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredsixtynine">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredseventy">
-               <img src="https://www.outsidepride.com/images/products/detail/wildflowers/rockymountainpenstemon1.jpg" Height="16" Width="16" alt="Rocky Mt Penstemon">
-            </div>
-            <div id="onehundredseventyone">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredseventytwo">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredseventythree">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredseventyfour">
-               <img src="https://www.outsidepride.com/images/products/detail/nova/agastachemexicanblue4.jpg" height="16" width="16" alt="Anise Hyssop">
-            </div>
-            <div id="onehundredseventyfive">
-               <img src="https://www.outsidepride.com/images/products/detail/gardenflower/hollyhockcelebrities.jpg" height="16" width="16" alt="Hollyhock">
-            </div>
-            <!---<div id="onehundredseventysix">176
-            </div>
-            <div id="onehundredseventyseven">177
-            </div>
-            <div id="onehundredseventyeight">178
-            </div>
-            <div id="onehundredseventynine">179
-            </div>
-            <div id="onehundredeighty">180
-            </div>--->
-        </div>
-      </div>
-      <div id="caption">
-         <h4>Stylized rendition of the garden showing the dominant species in their relative position.</h4>
-      </div>
-      <div id="description">
-         <p>The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of penstemon, coneflower, anise hyssop, yarrow, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two &ldquo;naturally&rdquo; seeded areas, seen in the stylized rendition.</p>
-         <p>It followed that natural reseeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation.</p>
-         <p>As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3" of new top soil had accumulated atop the fabric. The soil (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed.</p>
-         <p>There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary &ldquo;weed&rdquo; is grass!</p>
-         <p>New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red &ldquo;bearded&rdquo; penstemon. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select<sup>&reg;</sup> varieties. The idea being that Plant Select<sup>&reg;</sup> will survive the Colorado Front Range.</p> 
-         <p>The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?</p> 
-            
-         <div style="text-align:center"><button class="button" id="info">Read Aloud</button></div>
-
-           <br>
-         <!---<div style="text-align:center"><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_2094%20(1).JPEG?raw=true" height="200" width="200"></div>--->
-         <div style="text-align:center"><button class="button" id="design">Photo Gallery</button></div>
-      </div>
-       
-      <script>
-            document.getElementById("info").addEventListener("click", readText, false);
-               function readText() {
-               var text = ("The 2023 season began with a wet spring that lasted several weeks. To my surprise there was an abundance of pen stem in, coneflower, anise hyssop, yar row, and catmint that germinated into mature plants in my backyard. I did not plant any of these! The seeds were spread across my yard at the end of the 2019 growing season when Roz and I bagged the fall trimmings and took them home as ground cover. It was agreed that this practice could be incorporated into the fall maintenance schedule, prompting the establishment of the two naturally seeded areas, seen in the stylized rendition. It followed that natural ree seeding throughout the garden would be hindered due to the weed fabric that was laid down as weed control. When the garden was set up in the summer of 2017, it began on the west side as a tiny patch. Plants were planted through weed fabric, and irrigated by a drip system. The process of planting through weed fabric expanded to the current layout seen today. Along the way, the drip system was abandoned in favor of overhead irrigation. As weed fabric was removed along the west side of the garden, it became apparent that grass had grown through the fabric, and that up to 3 inches of new top soil had accumulated atop the fabric. The soil (which hopefully has seed from the surrounding plants) was distributed across the naturally seeded area along the east edge of the garden. To date, the weed fabric shown within the bordered area on the stylized rendition (bounded on the north by the Horizon Garden) has yet to be removed. There was a noticeable lack of bindweed in the garden this year, possibly due to the garden not being irrigated throughout the growing season. Also, the primary weed is grass! New seeds have been ordered to replant the northwest corner of the garden with a variety of species. Previously, this area (once under weed fabric) was dominated by a single species of red bearded pen stem in. The remaining weed fabric south of the Horizon Garden should be removed, and the area enhanced with added species. Special care is taken to match recommended pollinator plants with Plant Select varieties. The idea being that Plant Select will survive the Colorado Front Range. The Butterfly Pavilion recommends several types of native shrubs within a pollinator garden. The only shrub within the garden is a healthy insitu Rabbit Brush growing near the eastern Horizon Garden. Is it possible to buy added plants through a commercial nursery?")
-               var msg = new SpeechSynthesisUtterance(text);
-                window.speechSynthesis.speak(msg);
-               }
-      </script>
-
-      <br>
-      <br>
-
-<!---<button class="button" id="design">About</button>--->
-
-<dialog id="about">
    <table>
-      <tbody>
-         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_2094%20(2).JPEG?raw=true" height="100" width="100" alt="CA Garden after July summer rain"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0069.jpg?raw=true" height="100" width="100" alt="Speciosa"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0110.jpg?raw=true" height="100" width="100" alt="Salvia"></td></tr>
-         <tr><td>Summer Rain</td><td>Speciosa</td><td>Salvia</td></tr>
-         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0106.jpg?raw=true" height="100" width="100" alt="Agastache Coronado"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0108.jpg?raw=true" height="100" width="100" alt="Asclepias tuberosa"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0107.jpg?raw=true" height="100" width="100" alt="Russian Sage"></td></tr>
-         <tr><td>Coronado</td><td>Tuberosa</td><td>Russian Sage</td></tr>
-         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0102.jpg?raw=true" height="100" width="100" alt="Butterfly Bush"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0112.jpg?raw=true" height="100" width="100" alt="Anise Hyssop"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0179.jpg?raw=true" height="100" width="100" alt="Rabbit Brush"></td></tr>
-         <tr><td>Butterfly Bush</td><td>Anise Hyssop</td><td>Rabbit Brush</td></tr>
-         <tr><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0097.jpg?raw=true" height="100" width="100" alt="Galardia"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0111.jpg?raw=true" height="100" width="100" alt="Hollyhock"></td><td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0078.jpg?raw=true" height="100" width="100" alt="Penstemon"></td></tr>
-         <tr><td>Galardia</td><td>Hollyhock</td><td>Penstemon</td></tr>
-      </tbody>
-   </table><span style="font-s
-  <div id="open">
-     <div style="text-align:center"><button class="button" type="reset" id="cancelabout">Close</button></div>
-  </div>
-</dialog>
+  <tbody>
+    <tr>
+        <td>02/05/2024</td>
+        <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0335.jpg?raw=true" height="100" width="auto" alt="Room 1"></td>
+        <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0336.jpg?raw=true" height="100" width="auto" alt="Room 2"></td>
+        <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0337.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/06/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0338.jpg?raw=true" height="100" width="auto" alt="Room 1"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0339.jpg?raw=true" height="100" width="auto" alt="Room 2"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0340.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/07/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0341.jpg?raw=true" height="100" width="auto" alt="Room 1"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0342.jpg?raw=true" height="100" width="auto" alt="Room 2"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0343.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/08/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0344.jpg?raw=true" height="100" width="auto" alt="Room 1"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0345.jpg?raw=true" height="100" width="auto" alt="Room 2"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0346.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/09/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0347.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0348.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0349%20(1).jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/10/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0350.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0351.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0352.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/11/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0353.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0354.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0355.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/12/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0356.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0357.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0358.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/13/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0359.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0360.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0361.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/14/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0366.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0367.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0368.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/15/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0369.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0370.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0371.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/16/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0372.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0373.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0374.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/17/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0375.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0376.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0377.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/18/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0379.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0380.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0378.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/19/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0381.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0382.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0383.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/20/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0387.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0388.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0389.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/21/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0391.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0392.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0393.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/22/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0394.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0395.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0396.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/23/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0399.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0400.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0401.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/24/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0402.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0403.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0404.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/25/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0405.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0406.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0407.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/26/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0409.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0410.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0411.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/27/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0412.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0413.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0414.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/28/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0415.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0416.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0417.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>02/29/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0420.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0421.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0422.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>03/01/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0423.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0424.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0425.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>03/02/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0426.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0427.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0428.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
+    <tr>
+      <td>03/03/2024</td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0429.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0430.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+      <td><img src="https://github.com/expansestream/butterflygarden/blob/main/IMG_0431.jpg?raw=true" height="100" width="auto" alt="Back Yard"></td>
+    </tr>
 
-<script>
-   document.getElementById("design").addEventListener("click",discreption9,false);
-           function discreption9() {
-                dialog = document.getElementById("about");
-                dialog.show();   
-           };
-           document.getElementById("cancelabout").addEventListener("click",discreption10,false);
-           function discreption10() {
-                dialog = document.getElementById("about");
-                dialog.close();   
-           };
-</script>
-      
-      
+  </tbody>
+</table>
+      <script>
+      <!---JavaScript Statements Here--->
+      </script>
    </body>
 </html>
